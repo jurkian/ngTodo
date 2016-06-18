@@ -1,0 +1,38 @@
+/* Task filters */
+
+.task-filters {
+
+	margin-top: 12px;
+	padding-bottom: 10px;
+	padding-top: 8px;
+	border-top: 1px solid #f8f8f8;
+
+	span {
+		float: left;
+		padding: 4px 0;
+	}
+
+	ul {
+		float: right;
+
+		li {
+			display: inline-block;
+			margin: 0 1px;
+
+			a {
+				display: block;
+				padding: 3px 8px;
+				border: 1px solid transparent;
+				border-radius: 3px;
+
+				transition: color $trans-avg, border $trans-avg;
+			}
+		}
+
+		.active {
+			a {
+				border-color: $lighter-text;
+			}
+		}
+	}
+}

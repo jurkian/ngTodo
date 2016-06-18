@@ -1,0 +1,48 @@
+/* Todo list */
+
+.todo-list {
+	margin: 0;
+	padding: 0;
+
+	li {
+		padding: 10px 25px;
+		font-weight: 300;
+		font-size: 18px;
+		position: relative;
+		transition: background $trans-avg;
+
+		&:hover {
+			background: rgba(0,0,0,0.01);
+
+			.remove-task {
+				visibility: visible;
+				opacity: 1;
+
+				&:hover {
+					transition: opacity $trans-avg;
+					opacity: 0.7;
+				}
+			}
+		}
+	}
+
+	.remove-task {
+		position: absolute;
+		top: 0; right: 25px;
+
+		visibility: hidden;
+		opacity: 0;
+
+		cursor: pointer;
+		color: #db0000;
+		font-size: 30px;
+	}
+
+	.task-title {
+		margin-left: 15px;
+	}
+
+	.remove-task {
+
+	}
+}

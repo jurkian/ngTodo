@@ -1,0 +1,41 @@
+<div ng-controller="TodoCtrl as todo">
+	<h1>My todo list</h1>
+	
+	<section class="todo-container">
+		<ul class="todo-list">
+			<li>
+				<input type="checkbox">
+				<span class="task-title">Take a dog for a walk</span>
+				<span class="remove-task">&times;</span>
+			</li>
+			<li>
+				<input type="checkbox">
+				<span class="task-title">Take a dog for a walk</span>
+				<span class="remove-task">&times;</span>
+			</li>
+			<li>
+				<input type="checkbox">
+				<span class="task-title">Take a dog for a walk</span>
+				<span class="remove-task">&times;</span>
+			</li>
+		</ul>
+
+		<footer>		
+			<form class="todo-add-form">
+				<input type="checkbox" class="toggle-all">
+				<input type="text" class="new-task-title" placeholder="New task title..." autofocus>
+				<button class="btn btn-primary">Add</button>
+			</form>
+
+			<div class="task-filters cf">
+				<span>5 items left</span>
+				<ul>
+					<li class="active"><a href="#/">All</a></li>
+					<li><a href="#/">Active</a></li>
+					<li><a href="#/">Completed</a></li>
+				</ul>
+			</div>
+		</footer>
+
+	</section>
+</div>

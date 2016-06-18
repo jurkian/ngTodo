@@ -1,0 +1,22 @@
+/* Todo add form */
+
+.todo-add-form {
+
+	input[type="checkbox"] {
+
+	}
+
+	.new-task-title {
+		padding: 6px;
+		margin-left: 15px;
+		width: 344px;
+		margin-right: 5px;
+		border: 1px solid #cfcfcf;
+		transition: border $trans-avg;
+	}
+
+	.btn, .new-task-title {
+		height: 33px;
+		font-size: 14px;
+	}
+}

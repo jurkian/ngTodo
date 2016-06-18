@@ -1,0 +1,77 @@
+@import 'variables';
+@import 'micro-clearfix';
+
+/* ngTodo app */
+
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body {
+	background: url('../images/background.jpg') no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	font: $font-size $font-family;
+	color: $dark-text;
+}
+
+/* Selection */
+
+::-moz-selection { background: #FFFACD; color: #333; }
+::selection { background: #FFFACD; color: #333; }
+
+/* Links */
+
+a {
+	color: $dark-text;
+	text-decoration: none;
+	transition: color $trans-avg;
+
+	&:hover {
+		color: $lighter-text;
+	}
+}
+
+/* Lists */
+
+ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+/* Container */
+
+h1 {
+	text-align: center;
+	margin: 50px auto 10px;
+	font-weight: 300;
+	font-size: 44px;
+}
+
+.todo-container {
+	background: #fff;
+	padding: 15px 0 0;
+	max-width: 480px;
+	margin: 0 auto 10px;
+	box-shadow: 1px 1px 5px rgba(0,0,0,0.15);
+	transition: box-shadow $trans-avg;
+
+	&:hover {
+		box-shadow: 1px 1px 5px rgba(0,0,0,0.22);
+	}
+
+	footer {
+		padding: 0 25px;
+		margin-top: 18px;
+	}
+}
+
+@import 'buttons';
+@import 'todo-list';
+@import 'task-add';
+@import 'task-filters';
