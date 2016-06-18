@@ -71,6 +71,15 @@ h1 {
 	}
 }
 
+/* Responsive */
+
+@media screen and (max-width: 505px) {
+	.todo-container {
+		margin-left: 15px;
+		margin-right: 15px;
+	}
+}
+
 @import 'buttons';
 @import 'todo-list';
 @import 'task-add';

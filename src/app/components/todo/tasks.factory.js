@@ -36,7 +36,7 @@
 				return el.title === task.title;
 			});
 
-			if (!found) {
+			if (!found && task.title) {
 				tasks.push(task);
 			}
 		}

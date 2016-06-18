@@ -20,3 +20,26 @@
 		font-size: 14px;
 	}
 }
+
+/* Responsive */
+
+@media screen and (max-width: 505px) {
+	.todo-add-form {
+		@include cf();
+
+		input[type="checkbox"] {
+			float: left;
+			margin-top: 9px;
+		}
+
+		.new-task-title {
+			width: 87%;
+			float: right;
+			margin-right: 0;
+		}
+
+		.btn {
+			display: none;
+		}
+	}
+}
