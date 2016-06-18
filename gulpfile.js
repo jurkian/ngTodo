@@ -32,7 +32,6 @@ gulp.task('scripts', ['views'], () => {
 		.pipe($.plumber())
 		.pipe($.sourcemaps.init())
 		.pipe($.babel())
-		.pipe($.ngAnnotate())
 		.pipe($.sourcemaps.write('.'))
 		.pipe(gulp.dest('.tmp/scripts'))
 		.pipe(reload({stream: true}));
@@ -56,6 +55,7 @@ gulp.task('lint', () => {
 gulp.task('html', ['styles', 'scripts'], () => {
 	return gulp.src('src/*.html')
 		.pipe($.useref({searchPath: ['.tmp', 'src', '.']}))
+		.pipe($.if('*.js', $.ngAnnotate()))
 		.pipe($.if('*.js', $.uglify()))
 		.pipe($.if('*.css', $.cssnano({safe: true, autoprefixer: false})))
 		.pipe($.if('*.html', $.htmlmin({collapseWhitespace: true})))
