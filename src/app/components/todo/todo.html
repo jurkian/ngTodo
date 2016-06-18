@@ -18,7 +18,14 @@
 			</form>
 
 			<div class="task-filters cf">
-				<span>{{visibleTasks.length}} items left</span>
+				<span>
+					<ng-pluralize count="visibleTasks.length"
+						when="{'0': 'All tasks completed',
+							'one': '1 task left',
+							'other': '{} tasks left'}">
+					</ng-pluralize>
+				</span>
+
 				<ul>
 					<li ng-repeat="link in todo.taskFiltersLinks" ng-class="{'active': todo.currentUrl === link.url}">
 						<a href="#{{link.url}}">{{link.title}}</a>
