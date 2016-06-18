@@ -1,9 +1,9 @@
 <div ng-controller="TodoCtrl as todo">
 	<h1>My todo list</h1>
-	
+
 	<section class="todo-container">
 		<ul class="todo-list">
-			<li ng-repeat="task in todo.tasksList" ng-class="{'completed': task.completed}">
+			<li ng-repeat="task in todo.tasksList | filter: {completed: todo.taskFilter} as visibleTasks" ng-class="{'completed': task.completed}">
 				<input type="checkbox" ng-checked="task.completed" ng-click="todo.toggleCompleted(task)">
 				<span class="task-title">{{task.title}}</span>
 				<span class="remove-task" ng-click="todo.removeTask(task)">&times;</span>
@@ -18,11 +18,11 @@
 			</form>
 
 			<div class="task-filters cf">
-				<span>{{todo.tasksList.length}} items left</span>
+				<span>{{visibleTasks.length}} items left</span>
 				<ul>
-					<li class="active"><a href="#/">All</a></li>
-					<li><a href="#/">Active</a></li>
-					<li><a href="#/">Completed</a></li>
+					<li ng-repeat="link in todo.taskFiltersLinks" ng-class="{'active': todo.currentUrl === link.url}">
+						<a href="#{{link.url}}">{{link.title}}</a>
+					</li>
 				</ul>
 			</div>
 		</footer>
