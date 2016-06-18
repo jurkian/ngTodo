@@ -11,8 +11,18 @@
 		position: relative;
 		transition: background $trans-avg;
 
-		&:hover {
+		&.completed {
+			.task-title {
+				text-decoration: line-through;
+				color: $lighter-text;
+			}
+		}
+
+		&:hover, &.completed {
 			background: rgba(0,0,0,0.01);
+		}
+
+		&:hover {
 
 			.remove-task {
 				visibility: visible;

@@ -3,8 +3,8 @@
 	
 	<section class="todo-container">
 		<ul class="todo-list">
-			<li ng-repeat="task in todo.tasksList">
-				<input type="checkbox">
+			<li ng-repeat="task in todo.tasksList" ng-class="{'completed': task.completed}">
+				<input type="checkbox" ng-checked="task.completed" ng-click="todo.toggleCompleted(task)">
 				<span class="task-title">{{task.title}}</span>
 				<span class="remove-task" ng-click="todo.removeTask(task)">&times;</span>
 			</li>
@@ -12,7 +12,7 @@
 
 		<footer>		
 			<form class="todo-add-form">
-				<input type="checkbox" class="toggle-all">
+				<input type="checkbox" ng-model="toggleCheckbox" ng-click="todo.toggleCompletedAll(toggleCheckbox)">
 				<input type="text" class="new-task-title" ng-model="taskTitle" placeholder="New task title..." autofocus>
 				<button class="btn btn-primary" ng-click="todo.addTask(taskTitle)">Add</button>
 			</form>

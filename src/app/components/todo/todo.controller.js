@@ -9,6 +9,8 @@
 		vm.tasksList = Tasks.get();
 		vm.addTask = addTask;
 		vm.removeTask = Tasks.remove;
+		vm.toggleCompleted = Tasks.toggleCompleted;
+		vm.toggleCompletedAll = Tasks.toggleCompletedAll;
 
 		////////////
 
