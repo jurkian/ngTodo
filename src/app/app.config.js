@@ -1,15 +1,13 @@
 angular.module('app')
 	.config(function($routeProvider) {
+
+		var routeConfig = {
+			templateUrl: 'views/todo/todo.html'
+		};
+
 		$routeProvider
-			.when('/', {
-				templateUrl: 'views/todo/todo.html'
-			})
-			.when('/active', {
-				templateUrl: 'views/todo/todo.html'
-			})
-			.when('/completed', {
-				templateUrl: 'views/todo/todo.html'
-			})
+			.when('/', routeConfig)
+			.when('/:status', routeConfig)
 			.otherwise({
 				redirectTo: '/'
 			});

@@ -27,9 +27,9 @@
 				</span>
 
 				<ul>
-					<li ng-repeat="link in todo.taskFiltersLinks" ng-class="{'active': todo.currentUrl === link.url}">
-						<a href="#{{link.url}}">{{link.title}}</a>
-					</li>
+					<li ng-class="{'active': todo.currentUrl === '/'}"><a href="#/">All</a></li>
+					<li ng-class="{'active': todo.currentUrl === '/active'}"><a href="#/active">Active</a></li>
+					<li ng-class="{'active': todo.currentUrl === '/completed'}"><a href="#/completed">Completed</a></li>
 				</ul>
 			</div>
 		</footer>

@@ -10,7 +10,6 @@
 		vm.removeTask = Tasks.remove;
 		vm.toggleCompleted = Tasks.toggleCompleted;
 		vm.toggleCompletedAll = Tasks.toggleCompletedAll;
-		vm.taskFiltersLinks = taskFiltersLinks();
 		vm.currentUrl = $location.path();
 		vm.taskFilter = taskFilter();
 
@@ -25,14 +24,6 @@
 			};
 
 			Tasks.add(task);
-		}
-
-		function taskFiltersLinks() {
-			return [
-				{ url: '/', title: 'All' },
-				{ url: '/active', title: 'Active' },
-				{ url: '/completed', title: 'Completed' }
-			];
 		}
 
 		function taskFilter() {
@@ -50,6 +41,5 @@
 
 			return completed;
 		}
-
 	}
 })();
