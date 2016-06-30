@@ -11,6 +11,86 @@
 		position: relative;
 		transition: background $trans-avg;
 
+		// Animation 1
+		// Scale/zoom in
+
+		@keyframes zoom-in {
+			to {
+				opacity: 1;
+				max-height: 43px;
+				padding: 10px 25px;
+				transform: scale(1);
+			}
+		}
+
+		@keyframes zoom-out {
+			to {
+				opacity: 0;
+				max-height: 0;
+				padding: 0;
+				transform: scale(0);
+			}
+		}
+
+		&.ng-enter {
+			opacity: 0;
+			max-height: 0;
+			padding: 0;
+			transform: scale(0);
+		}
+
+		&.ng-enter.ng-enter-active {
+			animation: zoom-in .4s forwards;
+		}
+
+		&.ng-leave {
+			max-height: 43px;
+		}
+
+		&.ng-leave.ng-leave-active {
+			animation: zoom-out .4s forwards;
+		}
+
+		// Animation 2
+		// Slide in left
+
+		// @keyframes slide-in-left {
+		// 	to {
+		// 		opacity: 1;
+		// 		max-height: 43px;
+		// 		padding: 10px 25px;
+		// 		transform: translateX(0);
+		// 	}
+		// }
+
+		// @keyframes slide-in-right {
+		// 	to {
+		// 		opacity: 0;
+		// 		max-height: 0;
+		// 		padding: 0;
+		// 		transform: translateX(-50%);
+		// 	}
+		// }
+
+		// &.ng-enter {
+		// 	opacity: 0;
+		// 	max-height: 0;
+		// 	padding: 0;
+		// 	transform: translateX(-50%);
+		// }
+
+		// &.ng-enter.ng-enter-active {
+		// 	animation: slide-in-left .4s forwards;
+		// }
+
+		// &.ng-leave {
+		// 	max-height: 43px;
+		// }
+
+		// &.ng-leave.ng-leave-active {
+		// 	animation: slide-in-right .4s forwards;
+		// }
+
 		&.completed {
 			.task-title {
 				text-decoration: line-through;

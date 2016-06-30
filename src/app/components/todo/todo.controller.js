@@ -1,6 +1,5 @@
 (function() {
-	angular
-		.module('app')
+	angular.module('app')
 		.controller('TodoCtrl', TodoCtrl);
 
 	function TodoCtrl(Tasks, $location) {
