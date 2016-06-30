@@ -10,11 +10,11 @@
 			</li>
 		</ul>
 
-		<footer>		
-			<form class="todo-add-form">
-				<input type="checkbox" ng-model="toggleCheckbox" ng-click="todo.toggleCompletedAll(toggleCheckbox)">
-				<input type="text" class="new-task-title" ng-model="taskTitle" placeholder="New task title..." autofocus>
-				<button class="btn btn-primary" ng-click="todo.addTask(taskTitle)">Add</button>
+		<footer>
+			<form class="todo-add-form" ng-submit="todo.addTask()">
+				<input type="checkbox" ng-model="todo.toggleCheckbox" ng-click="todo.toggleCompletedAll(todo.toggleCheckbox)">
+				<input type="text" class="new-task-title" ng-model="todo.taskTitle" placeholder="New task title..." ng-disabled="todo.isSaving" autofocus>
+				<button class="btn btn-primary" type="submit">Add</button>
 			</form>
 
 			<div class="task-filters cf">
@@ -33,6 +33,5 @@
 				</ul>
 			</div>
 		</footer>
-
 	</section>
 </div>

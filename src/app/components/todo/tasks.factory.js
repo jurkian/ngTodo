@@ -36,7 +36,7 @@
 				return el.title === task.title;
 			});
 
-			if (!found && task.title) {
+			if (!found) {
 				tasks.push(task);
 			}
 		}
@@ -62,9 +62,9 @@
 			// newStatus = true/false based on checkbox value
 			var newStatus = checkbox;
 
-			for (var i = 0, len = tasks.length; i < len; i++) {
-				tasks[i].completed = newStatus;
-			}
+			tasks.forEach(function(el) {
+				el.completed = newStatus;
+			});
 		}
 
 		return {

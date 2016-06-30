@@ -2,11 +2,12 @@
 	angular.module('app')
 		.controller('TodoCtrl', TodoCtrl);
 
-	function TodoCtrl(Tasks, $location) {
+	function TodoCtrl(Tasks, $location, $timeout) {
 		var vm = this;
 
 		vm.tasksList = Tasks.get();
 		vm.addTask = addTask;
+		vm.isSaving = false;
 		vm.removeTask = Tasks.remove;
 		vm.toggleCompleted = Tasks.toggleCompleted;
 		vm.toggleCompletedAll = Tasks.toggleCompletedAll;
@@ -15,15 +16,25 @@
 
 		////////////
 
-		function addTask(taskTitle) {
-			// Prepare defaults, add title
+		function addTask() {
+			// Prepare task object
 			var task = {
 				id: vm.tasksList.length + 1,
-				title: taskTitle,
+				title: vm.taskTitle.trim(),
 				completed: false
 			};
 
-			Tasks.add(task);
+			if (!task.title) {
+				return;
+			}
+
+			// Simulate API
+			vm.isSaving = true;
+
+			$timeout(function() {
+				Tasks.add(task);
+				vm.isSaving = false;
+			}, 300);
 		}
 
 		function taskFilter() {
